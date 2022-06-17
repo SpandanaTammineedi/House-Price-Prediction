@@ -1,12 +1,12 @@
 import pandas as pd
 import numpy as np
-import seaborn as sns
+#import seaborn as sns
 from joblib import dump,load
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.ensemble import GradientBoostingRegressor
 import streamlit as st
-import os
+#import os
 
 #Read the file and save as data frame
 data = pd.read_csv('kc_house_data.csv')
