@@ -6,8 +6,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.ensemble import GradientBoostingRegressor
 import streamlit as st
-import matplotlib.pyplot as plt 
-%matplotlib inline
 import os
 
 #Read the file and save as data frame
