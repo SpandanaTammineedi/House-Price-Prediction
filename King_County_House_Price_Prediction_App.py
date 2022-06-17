@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 #import seaborn as sns
-install joblib
 from joblib import dump,load
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
