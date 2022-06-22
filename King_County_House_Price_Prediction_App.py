@@ -1,5 +1,4 @@
 import pandas as pd
-install numpy
 import numpy as np
 #import seaborn as sns
 import joblib
