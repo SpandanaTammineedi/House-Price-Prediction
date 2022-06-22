@@ -1,4 +1,5 @@
 import pandas as pd
+install numpy
 import numpy as np
 #import seaborn as sns
 import joblib
@@ -22,6 +23,7 @@ data = data.drop(['id','date','zipcode','sqft_above','sqft_lot15','sqft_living15
 
 data.yr_built = data.yr_built.astype(str)
 data.yr_renovated = data.yr_renovated.astype(str)
+total_data = data.copy()
 
 #Train Test Split
 X = data.drop(['price','log_price'],axis=1)
@@ -36,20 +38,20 @@ X_test = scaler.transform(X_test)
 st.sidebar.header('Specify Input Parameters - these will determine the predicted value.')
 
 def features_from_user():
-    Bedrooms = st.sidebar.slider('Bedrooms', float(full_df.Bedrooms.min()), float(full_df.Bedrooms.max()), float(full_df.Bedrooms.mean()))
-    Bathrooms = st.sidebar.slider('Bathrooms', float(full_df.Bathrooms.min()), float(full_df.Bathrooms.max()), float(full_df.Bathrooms.mean()))
-    sqft_living = st.sidebar.slider('Size in sqft', float(full_df.sqft_living.min()), float(full_df.sqft_living.max()), float(full_df.sqft_living.mean()))
-    sqft_lot = st.sidebar.slider('Lot Size', float(full_df.sqft_lot.min()), float(full_df.sqft_lot.max()), float(full_df.sqft_lot.mean()))
-    floors = st.sidebar.slider('Number of floors', float(full_df.floors.min()), float(full_df.floors.max()), float(full_df.floors.mean()))
-    waterfront = st.sidebar.slider('Waterfront', float(full_df.waterfront.min()), float(full_df.waterfront.max()), float(full_df.waterfront.mean()))
-    view = st.sidebar.slider('View', float(full_df.view.min()), float(full_df.view.max()), float(full_df.view.mean())) 
-    condition = st.sidebar.slider('Condition', float(full_df.condition.min()), float(full_df.condition.max()), float(full_df.condition.mean()))
-    grade = st.sidebar.slider('Grade', float(full_df.grade.min()), float(full_df.grade.max()), float(full_df.grade.mean()))
-    sqft_basement = st.sidebar.slider('Basement size in sqft', float(full_df.sqft_basement.min()), float(full_df.sqft_basement.max()), float(full_df.sqft_basement.mean()))
-    yr_built = st.sidebar.slider('Year Built', float(full_df.yr_built.min()), float(full_df.yr_built.max()), float(full_df.yr_built.mean()))
-    yr_renovated = st.sidebar.slider('Year Renovated', float(full_df.yr_renovated.min()), float(full_df.yr_renovated.max()), float(full_df.yr_renovated.mean()))
-    lat = st.sidebar.slider('Latitude', float(full_df.lat.min()), float(full_df.lat.max()), float(full_df.lat.mean()))
-    long = st.sidebar.slider('Longitude', float(full_df.long.min()), float(full_df.long.max()), float(full_df.long.mean()))
+    Bedrooms = st.sidebar.slider('Bedrooms', float(total_data.Bedrooms.min()), float(total_data.Bedrooms.max()), float(total_data.Bedrooms.mean()))
+    Bathrooms = st.sidebar.slider('Bathrooms', float(total_data.Bathrooms.min()), float(total_data.Bathrooms.max()), float(total_data.Bathrooms.mean()))
+    sqft_living = st.sidebar.slider('Size in sqft', float(total_data.sqft_living.min()), float(total_data.sqft_living.max()), float(total_data.sqft_living.mean()))
+    sqft_lot = st.sidebar.slider('Lot Size', float(total_data.sqft_lot.min()), float(total_data.sqft_lot.max()), float(total_data.sqft_lot.mean()))
+    floors = st.sidebar.slider('Number of floors', float(total_data.floors.min()), float(total_data.floors.max()), float(total_data.floors.mean()))
+    waterfront = st.sidebar.slider('Waterfront', float(total_data.waterfront.min()), float(total_data.waterfront.max()), float(total_data.waterfront.mean()))
+    view = st.sidebar.slider('View', float(total_data.view.min()), float(total_data.view.max()), float(total_data.view.mean())) 
+    condition = st.sidebar.slider('Condition', float(total_data.condition.min()), float(total_data.condition.max()), float(total_data.condition.mean()))
+    grade = st.sidebar.slider('Grade', float(total_data.grade.min()), float(total_data.grade.max()), float(total_data.grade.mean()))
+    sqft_basement = st.sidebar.slider('Basement size in sqft', float(total_data.sqft_basement.min()), float(total_data.sqft_basement.max()), float(total_data.sqft_basement.mean()))
+    yr_built = st.sidebar.slider('Year Built', float(total_data.yr_built.min()), float(total_data.yr_built.max()), float(total_data.yr_built.mean()))
+    yr_renovated = st.sidebar.slider('Year Renovated', float(total_data.yr_renovated.min()), float(total_data.yr_renovated.max()), float(total_data.yr_renovated.mean()))
+    lat = st.sidebar.slider('Latitude', float(total_data.lat.min()), float(total_data.lat.max()), float(total_data.lat.mean()))
+    long = st.sidebar.slider('Longitude', float(total_data.long.min()), float(total_data.long.max()), float(total_data.long.mean()))
     
     
 
