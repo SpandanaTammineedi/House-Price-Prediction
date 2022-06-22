@@ -81,10 +81,13 @@ GB = GradientBoostingRegressor(learning_rate = 0.02, subsample = 0.5, n_estimato
 GB.fit(X_train,y_train)
 
 #Saving the model
-dump(GB,'model.joblib')
+joblib.dump(GB,'model.joblib')
+
+#pickle.dump(model,open('model & scaler/rfrmodel.pkl','wb'))
+#model=pk.load(open('model & scaler/rfrmodel.pkl','rb'))
 
 #Loading the model
-model1 = load('user_data/model.joblib')
+model1 = joblib.load('user_data/model.joblib')
 
 #Prediction
 prediction = int(model1.predict(df))
