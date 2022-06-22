@@ -84,7 +84,7 @@ GB.fit(X_train,y_train)
 dump(GB,'model.joblib')
 
 #Loading the model
-model1 = load('data/model.joblib')
+model1 = load('user_data/model.joblib')
 
 #Prediction
 prediction = int(model1.predict(df))
