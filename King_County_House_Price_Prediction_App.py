@@ -7,6 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.ensemble import GradientBoostingRegressor
 import streamlit as st
+import pickle
 #import matplotlib.pyplot as plt 
 #%matplotlib inline
 #import os
@@ -37,7 +38,7 @@ X_test = scaler.transform(X_test)
 st.sidebar.header('Specify Input Parameters - these will determine the predicted value.')
 
 def features_from_user():
-    bedrooms = st.sidebar.slider('Bedrooms', float(total_data.bedrooms.min()), float(total_data.bedrooms.max()), float(total_data.bedrooms.mean()))
+    bedrooms = st.sidebar.slider('Bedrooms', float(total_data.bedrooms.min()), float(total_data.bedrooms.max()),         float(total_data.bedrooms.mean()))
     bathrooms = st.sidebar.slider('Bathrooms', float(total_data.bathrooms.min()), float(total_data.bathrooms.max()), float(total_data.bathrooms.mean()))
     sqft_living = st.sidebar.slider('Size in sqft', float(total_data.sqft_living.min()), float(total_data.sqft_living.max()), float(total_data.sqft_living.mean()))
     sqft_lot = st.sidebar.slider('Lot Size', float(total_data.sqft_lot.min()), float(total_data.sqft_lot.max()), float(total_data.sqft_lot.mean()))
@@ -81,13 +82,13 @@ GB = GradientBoostingRegressor(learning_rate = 0.02, subsample = 0.5, n_estimato
 GB.fit(X_train,y_train)
 
 #Saving the model
-joblib.dump(GB,'model.joblib')
+#joblib.dump(GB,'model.joblib')
 
-#pickle.dump(model,open('model & scaler/rfrmodel.pkl','wb'))
-#model=pk.load(open('model & scaler/rfrmodel.pkl','rb'))
+pickle.dump(GB,open('model.pkl','wb'))
+model=pickle.load(open('model.pkl','rb'))
 
 #Loading the model
-model1 = joblib.load('user_data/model.joblib')
+#model1 = joblib.load('user_data/model.joblib')
 
 #Prediction
 prediction = int(model1.predict(df))
