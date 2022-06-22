@@ -20,8 +20,8 @@ data['log_price'] = np.log(data.price)
 #Remove features that are not required for training
 data = data.drop(['id','date','zipcode','sqft_above','sqft_lot15','sqft_living15'],axis=1)
 
-data.yr_built = data.yr_built.astype(str)
-data.yr_renovated = data.yr_renovated.astype(str)
+#data.yr_built = data.yr_built.astype(str)
+#data.yr_renovated = data.yr_renovated.astype(str)
 total_data = data.copy()
 
 #Train Test Split
