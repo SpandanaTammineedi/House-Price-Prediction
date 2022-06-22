@@ -37,8 +37,8 @@ X_test = scaler.transform(X_test)
 st.sidebar.header('Specify Input Parameters - these will determine the predicted value.')
 
 def features_from_user():
-    Bedrooms = st.sidebar.slider('Bedrooms', float(total_data.Bedrooms.min()), float(total_data.Bedrooms.max()), float(total_data.Bedrooms.mean()))
-    Bathrooms = st.sidebar.slider('Bathrooms', float(total_data.Bathrooms.min()), float(total_data.Bathrooms.max()), float(total_data.Bathrooms.mean()))
+    bedrooms = st.sidebar.slider('Bedrooms', float(total_data.bedrooms.min()), float(total_data.bedrooms.max()), float(total_data.bedrooms.mean()))
+    bathrooms = st.sidebar.slider('Bathrooms', float(total_data.bathrooms.min()), float(total_data.bathrooms.max()), float(total_data.bathrooms.mean()))
     sqft_living = st.sidebar.slider('Size in sqft', float(total_data.sqft_living.min()), float(total_data.sqft_living.max()), float(total_data.sqft_living.mean()))
     sqft_lot = st.sidebar.slider('Lot Size', float(total_data.sqft_lot.min()), float(total_data.sqft_lot.max()), float(total_data.sqft_lot.mean()))
     floors = st.sidebar.slider('Number of floors', float(total_data.floors.min()), float(total_data.floors.max()), float(total_data.floors.mean()))
@@ -54,7 +54,7 @@ def features_from_user():
     
     
 
-    user_data = {'Bedrooms':Bedrooms,'Bathrooms':Bathrooms,'Size in sqft':sqft_living,'Lot Size':sqft_lot,
+    user_data = {'Bedrooms':bedrooms,'Bathrooms':bathrooms,'Size in sqft':sqft_living,'Lot Size':sqft_lot,
              'Number of floors':floors,'Waterfront':waterfront,'View':view,'Condition':condition,'Grade':grade,
             'Basement size in sqft':sqft_basement,'Year Built':yr_built,'Year Renovated':yr_renovated,'Latitude':lat,
             'Longitude':long}
