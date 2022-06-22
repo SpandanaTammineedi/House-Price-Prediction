@@ -91,7 +91,7 @@ model=pickle.load(open('model.pkl','rb'))
 #model1 = joblib.load('user_data/model.joblib')
 
 #Prediction
-prediction = int(model1.predict(df))
+prediction = int(model.predict(df))
 GB_prediction = f"{prediction:,d}"
 
 
