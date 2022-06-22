@@ -85,7 +85,7 @@ GB.fit(X_train,y_train)
 #joblib.dump(GB,'model.joblib')
 
 pickle.dump(GB,open('model.pkl','wb'))
-model=pickle.load(open('model.pkl','rb'))
+model=pickle.load(open('user_data/model.pkl','rb'))
 
 #Loading the model
 #model1 = joblib.load('user_data/model.joblib')
