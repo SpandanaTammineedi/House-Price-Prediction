@@ -35,15 +35,6 @@ scaler = MinMaxScaler()
 X_train= scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 
-st.write("""
-# California Housing Prices
-""")
-st.write("---")
-st.markdown("![Alt Text](https://giphy.com/gifs/art-houses-pink-house-UqqVRaP8y4uo1GNxbN)")
-st.write("---")
-
-
-
 st.sidebar.header('Specify Input Parameters - these will determine the predicted value.')
 
 def features_from_user():
@@ -91,13 +82,15 @@ GB = GradientBoostingRegressor(learning_rate = 0.02, subsample = 0.5, n_estimato
 GB.fit(X_train,y_train)
 
 #Saving the model
-#joblib.dump(GB,'model.joblib')
 
-pickle.dump(GB,open('model.pkl','wb'))
-model=pickle.load(open('model.pkl','rb'))
+#joblib.dump(GB,'model.joblib')
+#pickle.dump(GB,open('model.pkl','wb'))
+
 
 #Loading the model
-#model1 = joblib.load('user_data/model.joblib')
+
+model = joblib.load('Data/model.jlib')
+#model1 =pickle.load(open('Data/model.pkl','rb'))
 
 #Prediction
 prediction = int(model.predict(df))
