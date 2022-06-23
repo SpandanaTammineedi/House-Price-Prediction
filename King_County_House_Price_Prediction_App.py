@@ -35,6 +35,15 @@ scaler = MinMaxScaler()
 X_train= scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 
+st.write("""
+# California Housing Prices
+""")
+st.write("---")
+st.markdown("![Alt Text](https://giphy.com/gifs/art-houses-pink-house-UqqVRaP8y4uo1GNxbN)")
+st.write("---")
+
+
+
 st.sidebar.header('Specify Input Parameters - these will determine the predicted value.')
 
 def features_from_user():
