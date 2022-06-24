@@ -43,7 +43,7 @@ def features_from_user():
     sqft_living = st.sidebar.slider('Size in sqft', float(total_data.sqft_living.min()), float(total_data.sqft_living.max()), float(total_data.sqft_living.mean()))
     sqft_lot = st.sidebar.slider('Lot Size', float(total_data.sqft_lot.min()), float(total_data.sqft_lot.max()), float(total_data.sqft_lot.mean()))
     floors = st.sidebar.slider('Number of floors', float(total_data.floors.min()), float(total_data.floors.max()), float(total_data.floors.mean()))
-    waterfront = st.sidebar.slider('Waterfront', float(total_data.waterfront.min()), float(total_data.waterfront.max()), float(total_data.waterfront.mean()))
+     waterfront=st.selectbox('Waterfront',(1,0))
     view = st.sidebar.slider('View', float(total_data.view.min()), float(total_data.view.max()), float(total_data.view.mean())) 
     condition = st.sidebar.slider('Condition', float(total_data.condition.min()), float(total_data.condition.max()), float(total_data.condition.mean()))
     grade = st.sidebar.slider('Grade', float(total_data.grade.min()), float(total_data.grade.max()), float(total_data.grade.mean()))
