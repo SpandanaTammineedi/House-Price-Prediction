@@ -19,14 +19,14 @@ data = pd.read_csv('kc_house_data.csv')
 data['log_price'] = np.log(data.price)
 
 #Remove features that are not required for training
-data = data.drop(['id','date','zipcode','sqft_above','sqft_lot15','sqft_living15'],axis=1)
+data = data.drop(['id','date','zipcode','sqft_above','sqft_lot15','sqft_living15','price'],axis=1)
 
 #data.yr_built = data.yr_built.astype(str)
 #data.yr_renovated = data.yr_renovated.astype(str)
 total_data = data.copy()
 
 #Train Test Split
-X = data.drop(['price','log_price'],axis=1)
+X = data.drop(['log_price'],axis=1)
 y = data['log_price']
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=101)
 
