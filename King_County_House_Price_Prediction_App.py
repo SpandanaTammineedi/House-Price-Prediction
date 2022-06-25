@@ -38,7 +38,7 @@ total_data = data.copy()
 st.sidebar.header('Specify Input Parameters - these will determine the predicted value.')
 
 def features_from_user():
-    bedrooms = st.sidebar.slider('Bedrooms', float(total_data.bedrooms.min()), float(total_data.bedrooms.max()),         float(total_data.bedrooms.mean()))
+    bedrooms = st.sidebar.slider('Bedrooms', float(data.bedrooms.min()), float(data.bedrooms.max()),float(data.bedrooms.mean()))
     bathrooms = st.sidebar.slider('Bathrooms', float(total_data.bathrooms.min()), float(total_data.bathrooms.max()), float(total_data.bathrooms.mean()))
     sqft_living = st.sidebar.slider('Size in sqft', float(total_data.sqft_living.min()), float(total_data.sqft_living.max()), float(total_data.sqft_living.mean()))
     sqft_lot = st.sidebar.slider('Lot Size', float(total_data.sqft_lot.min()), float(total_data.sqft_lot.max()), float(total_data.sqft_lot.mean()))
