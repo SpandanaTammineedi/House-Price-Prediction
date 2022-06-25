@@ -26,14 +26,14 @@ data = data.drop(['id','date','zipcode','sqft_above','sqft_lot15','sqft_living15
 total_data = data.copy()
 
 #Train Test Split
-X = data.drop(['log_price'],axis=1)
-y = data['log_price']
-X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=101)
+#X = data.drop(['log_price'],axis=1)
+#y = data['log_price']
+#X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=101)
 
 
-scaler = MinMaxScaler()
-X_train= scaler.fit_transform(X_train)
-X_test = scaler.transform(X_test)
+#scaler = MinMaxScaler()
+#X_train= scaler.fit_transform(X_train)
+#X_test = scaler.transform(X_test)
 
 st.sidebar.header('Specify Input Parameters - these will determine the predicted value.')
 
@@ -78,8 +78,8 @@ st.write('---')
 
 #Gradient Boost Model
 
-GB = GradientBoostingRegressor(learning_rate = 0.02, subsample = 0.5, n_estimators = 1500, max_depth = 6)
-GB.fit(X_train,y_train)
+#GB = GradientBoostingRegressor(learning_rate = 0.02, subsample = 0.5, n_estimators = 1500, max_depth = 6)
+#GB.fit(X_train,y_train)
 
 #Saving the model
 
